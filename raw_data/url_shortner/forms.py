@@ -34,7 +34,7 @@ class URLShortnerForm(forms.Form):
         """
         short_url = self.cleaned_data.get('short_url', "").strip()
         if short_url:
-            if len(short_url)>=9:
+            if len(short_url) >= 9:
                 raise forms.ValidationError('Entered short url cannot accept')
             try:
                 short_url_object = UrlShortner.objects.get(short_url=short_url)
