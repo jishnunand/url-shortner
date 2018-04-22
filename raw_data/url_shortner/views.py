@@ -79,7 +79,7 @@ def url_redirect(request, short_url):
     """
     redirecting to log url
     :param request:
-    :param short_url
+    :param short_url: short url, example: sjfdsdff
     :return:
     """
     if short_url:
@@ -93,7 +93,7 @@ def url_redirect(request, short_url):
 
 def url_not_found(request):
     """
-
+    direct to 404 page if the short url not found in our db
     :param request:
     :return:
     """
