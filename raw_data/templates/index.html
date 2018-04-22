@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <form action="/" method="post">
+        {% csrf_token %}
+        Long URL: {{form.long_url}}
+        Short URL: {{form.short_url}}
+        <button type="submit">Generate URL Shorter</button>
+    </form>
+    {% if form.errors %}
+        {{form.errors}}
+    {% endif %}
+
+</body>
+</html>
