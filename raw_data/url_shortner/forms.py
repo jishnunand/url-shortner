@@ -21,7 +21,8 @@ class URLShortnerForm(forms.Form):
             try:
                 long_url_object = UrlShortner.objects.get(long_url=long_url)
                 if long_url_object:
-                    raise forms.ValidationError('Long URL Exists. Short URL: %s' % long_url_object.short_url)
+                    url = 'http://localhost:8000/%s/' % long_url_object.short_url
+                    raise forms.ValidationError('Long URL Exists. Short URL: %s' % url)
             except UrlShortner.DoesNotExist:
                 print ("Long URL Not available")
             return long_url
@@ -33,6 +34,8 @@ class URLShortnerForm(forms.Form):
         """
         short_url = self.cleaned_data.get('short_url', "").strip()
         if short_url:
+            if len(short_url) >= 9:
+                raise forms.ValidationError('Entered short url cannot accept')
             try:
                 short_url_object = UrlShortner.objects.get(short_url=short_url)
                 if short_url_object:
