@@ -8,7 +8,7 @@ from django.db import models
 
 class UrlShortner(models.Model):
     """
-
+    Django Model for storing URL
     """
     short_url = models.CharField(null=False, max_length=8, blank=False)
     long_url = models.TextField(null=False, blank=False)
