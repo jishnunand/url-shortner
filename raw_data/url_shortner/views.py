@@ -25,7 +25,7 @@ def id_generator(size=8, chars=string.ascii_lowercase):
 
 def home(request):
     """
-
+    Index page where user can generate url shorter
     :param request:
     :return:
     """
@@ -52,8 +52,9 @@ def home(request):
 
 def url_redirect(request, short_url):
     """
-
+    redirecting to log url
     :param request:
+    :param short_url: short url, example: sjfdsdff
     :return:
     """
     if short_url:
@@ -67,7 +68,7 @@ def url_redirect(request, short_url):
 
 def url_not_found(request):
     """
-
+    direct to 404 page if the short url not found in our db
     :param request:
     :return:
     """
