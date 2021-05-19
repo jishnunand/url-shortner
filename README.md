@@ -1,2 +1,1 @@
-# rawdata
-raw data task for url shortner
+# Django Project for creating URL shortner by providing URL
